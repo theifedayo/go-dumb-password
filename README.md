@@ -37,9 +37,21 @@ if validator.Validate(password) {
     fmt.Println("Password is common. Please try another!")
 }
 ```
+The `Validate` method returns `true` if the provided password is not found in the list of common passwords loaded from the password list file. If the password is found in the list, it returns `false`, indicating that the password is common and should be avoided.
 
-### Caching
-The library supports caching of the password list to avoid reading the file on every validation request. By default, it uses a simple in-memory cache (`sync.Map`). If you prefer to use a different caching mechanism, you can customize it by implementing your own cache functions.
+
+### Get Cache Key
+To improve performance, the Dumb Password Validator utilizes caching. The GetCacheKey method is used to retrieve the cache key, which serves as an identifier for the cached data (the list of common passwords) associated with the password list file:
+```go
+cacheKey, err := validator.GetCacheKey()
+if err != nil {
+    // Handle the error if the cache key cannot be retrieved
+} else {
+    // Use cacheKey for any cache-related operations
+}
+```
+The cache key is calculated based on the MD5 hash of the password list file's content. It helps the validator quickly determine if the cached data is still valid or if the file needs to be read again to update the cache.
+
 
 ## Contributing
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request. Your contributions are highly appreciated!
@@ -48,4 +60,4 @@ If you find any issues or have suggestions for improvements, feel free to open a
 This library is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
-The go dumb password library is inspired by the Laravel Password package created by Prosper Otemuyiwa.
+The go dumb password library is inspired by the [Laravel Password](https://github.com/unicodeveloper/laravel-password) package created by Prosper Otemuyiwa.
