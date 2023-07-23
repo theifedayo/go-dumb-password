@@ -21,7 +21,7 @@ import (
 To create a new instance of the DumbPasswordValidator, you need to provide the path to the `passwordlist.txt` file containing the list of common passwords:
 ```go
 passwordListPath := "/path/to/passwordlist.txt"
-validator, err := dumbpassword.NewDumbPasswordValidator(passwordListPath)
+validator, err := dumbpassword.DPValidator(passwordListPath)
 if err != nil {
     // Handle the error if the file cannot be read or other issues occur during initialization.
 }
