@@ -8,8 +8,8 @@ import (
 	"testing"
 )
 
+// TestDumbPasswordValidator_Validate tests the Validate function of DumbPasswordValidator.
 func TestDumbPasswordValidator_Validate(t *testing.T) {
-	// Create a temporary password list file for testing.
 	passwordListContent := "password1\npassword2\npassword3\n"
 	tempFile, err := ioutil.TempFile("", "passwordlist.txt")
 	if err != nil {
@@ -17,19 +17,16 @@ func TestDumbPasswordValidator_Validate(t *testing.T) {
 	}
 	defer os.Remove(tempFile.Name())
 
-	// Write the test password list to the temporary file.
 	_, err = tempFile.WriteString(passwordListContent)
 	if err != nil {
 		t.Fatalf("Error writing to temporary file: %v", err)
 	}
 
-	// Create a new DumbPasswordValidator instance.
-	validator, err := NewDumbPasswordValidator(tempFile.Name())
+	validator, err := DPValidator(tempFile.Name())
 	if err != nil {
 		t.Fatalf("Error creating DumbPasswordValidator: %v", err)
 	}
 
-	// Test common and uncommon passwords.
 	testCases := []struct {
 		password string
 		isCommon bool
@@ -66,7 +63,7 @@ func TestDumbPasswordValidator_GetCacheKey(t *testing.T) {
 		t.Fatalf("Error writing to temporary file: %v", err)
 	}
 
-	validator, err := NewDumbPasswordValidator(tempFile.Name())
+	validator, err := DPValidator(tempFile.Name())
 	if err != nil {
 		t.Fatalf("Error creating DumbPasswordValidator: %v", err)
 	}

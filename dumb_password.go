@@ -15,8 +15,8 @@ type DumbPasswordValidator struct {
 	mutex            sync.Mutex
 }
 
-// NewDumbPasswordValidator creates a new instance of DumbPasswordValidator.
-func NewDumbPasswordValidator(passwordListPath string) (*DumbPasswordValidator, error) {
+// DPValidator creates a new instance of DumbPasswordValidator.
+func DPValidator(passwordListPath string) (*DumbPasswordValidator, error) {
 	commonPasswords, err := loadPasswordList(passwordListPath)
 	if err != nil {
 		return nil, err
