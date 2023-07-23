@@ -40,3 +40,12 @@ if validator.Validate(password) {
 
 ### Caching
 The library supports caching of the password list to avoid reading the file on every validation request. By default, it uses a simple in-memory cache (`sync.Map`). If you prefer to use a different caching mechanism, you can customize it by implementing your own cache functions.
+
+## Contributing
+If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request. Your contributions are highly appreciated!
+
+## License
+This library is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+The go dumb password library is inspired by the Laravel Password package created by Prosper Otemuyiwa.
