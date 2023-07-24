@@ -60,4 +60,4 @@ If you find any issues or have suggestions for improvements, feel free to open a
 This library is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
-The go dumb password library is inspired by the [Laravel Password](https://github.com/unicodeveloper/laravel-password) package created by Prosper Otemuyiwa.
+The go dumb password library is inspired by the [Laravel Password](https://github.com/unicodeveloper/laravel-password) package created by [Prosper Otemuyiwa](https://github.com/unicodeveloper/).
