@@ -1,6 +1,7 @@
 # Go Dumb Password
 
-`Go Dumb Password` is a Go library that provides a simple and efficient way to check if a given password is common or "dumb." It loads a list of common passwords from a file and allows you to validate passwords against this list to encourage users to choose stronger and less predictable passwords.
+`Go Dumb Password` is a Go library that provides a simple and efficient way to check if a given password is common or "dumb." It can be used to verify the user provided password is not one of the top 10,000 worst passwords as analysed by a respectable IT security analyst. Read about all [here](https://xato.net/10-000-top-passwords-6d6380716fe0#.473dkcjfm), [here(wired)](http://www.wired.com/2013/12/web-semantics-the-ten-thousand-worst-passwords/) or [here(telegram)](http://www.telegraph.co.uk/technology/internet-security/10303159/Most-common-and-hackable-passwords-on-the-internet.html). It loads a list of common passwords from a file and allows you to validate passwords against this list to encourage users to choose stronger and less predictable passwords.
+
 
 ## Installation
 You can install the library using the `go get` command:
